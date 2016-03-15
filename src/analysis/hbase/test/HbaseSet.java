@@ -770,8 +770,7 @@ public class HbaseSet {
 			stationName = anaObjects[i].split(":")[0];
 			device = anaObjects[i].split(":")[1];
 			typeVar = anaObjects[i].split(":")[2];
-			myJson.add(resulttojson(tableName, stationName, device, typeVar,
-					startTime, endTime));
+			myJson.add(resulttojson(tableName, stationName, device, typeVar,startTime, endTime));
 		}
 		HTable tableHis = new HTable(conf, "AnalysisHistory");
 		String hisRow = sbType + "分析时间段为：" + startDate + "到" + endDate;
