@@ -11,7 +11,7 @@ import org.apache.hadoop.fs.Path;
  * this file is to upload datafiles to hdfs and record it.
  */
 import org.apache.hadoop.util.Progressable;
-import org.vafer.jdeb.shaded.compress.compress.utils.IOUtils;
+//import org.vafer.jdeb.shaded.compress.compress.utils.IOUtils;
 
 
 public class UpLoad_Files {
@@ -27,7 +27,7 @@ public class UpLoad_Files {
 				System.out.print("*");
 			}
 		});
-		IOUtils.copy(in, out, 4096);		
+		//IOUtils.copy(in, out, 4096);		
 	}
 	public static void main(String[] args) throws Exception{
 		String input_pos="/home/hadoop/casco_bigdata/hadoop/input/file01";
