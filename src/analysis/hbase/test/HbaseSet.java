@@ -150,7 +150,37 @@ public class HbaseSet {
 			System.out.println("create table " + tableName + " ok.");
 		}
 	}
-
+	/**
+	 * disable表
+	 */
+	public static void disableTable(String tableName) throws Exception {
+		try {
+			HBaseAdmin admin = new HBaseAdmin(conf);
+			admin.disableTable(tableName);
+			//admin.deleteTable(tableName);
+			System.out.println("disable table " + tableName + " ok.");
+		} catch (MasterNotRunningException e) {
+			e.printStackTrace();
+		} catch (ZooKeeperConnectionException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * enable表
+	 */
+	public static void enableTable(String tableName) throws Exception {
+		try {
+			HBaseAdmin admin = new HBaseAdmin(conf);
+			//admin.disableTable(tableName);
+			admin.enableTable(tableName);
+			//admin.deleteTable(tableName);
+			System.out.println("enable table " + tableName + " ok.");
+		} catch (MasterNotRunningException e) {
+			e.printStackTrace();
+		} catch (ZooKeeperConnectionException e) {
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * 删除表
 	 */
